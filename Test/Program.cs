@@ -10,7 +10,7 @@ namespace Task10
     {
         static void Main()
         {
-            //test asfdasdf
+            //test asfdasdf asdfadf
             String path = File.ReadAllText(@"C:\Temp\Misc\Data.txt");
             int[,] arr = TwoDArray(path);
             int[,] answer = GetAnswer(arr);
