@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\pdo2810\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\pdo2810\\.nuget\\packages"
+    ]
+  }
+}
