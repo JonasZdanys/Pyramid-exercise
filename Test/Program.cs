@@ -10,28 +10,32 @@ namespace Task10
     {
         static void Main()
         {
-            //test asfdasdf asdfadf
             String path = File.ReadAllText(@"C:\Temp\Misc\Data.txt");
             int[,] arr = TwoDArray(path);
-            int[,] answer = GetAnswer(arr);
-            foreach (var item in answer)
+            int[,] newArray = GetAnswer(arr);
+            int answer = 0;
+            for (int i = 1; i < newArray.GetLength(1); i++)
             {
-                Console.WriteLine(JsonSerializer.Serialize(item));
+                if (newArray [newArray.GetLength(0) - 1, i]  > answer)
+                {
+                    answer = newArray[newArray.GetLength(0) - 1, i];
+                }
             }
+            Console.WriteLine(answer);
         }
 
         private static int[,] TwoDArray(string path)
         {
             int i = 0;
-            int[,] arr = new int[14, 14];
+            int[,] arr = new int[15, 15];
             foreach (var row in path.Split('\n'))
             {
                 int j = 0;
-                if (i < 14)
+                if (i < 15)
                 {
                     foreach (var col in row.Trim().Split(' '))
                     {
-                        if (j < 14)
+                        if (j < 15)
                         {
                             arr[i, j] = int.Parse(col.Trim());
                             j++;
@@ -46,7 +50,7 @@ namespace Task10
         {
             int[,] newArray = new int[arr.GetLength(0),arr.GetLength(1)];
             newArray[0, 0] = arr[0, 0];
-            for (int i = 1; i < 14; i++)
+            for (int i = 1; i < 15; i++)
             {
                 for (int x = 0; x <= i; x++)
                 {
